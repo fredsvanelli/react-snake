@@ -9,16 +9,26 @@ const PlayButton = () => {
     return (
         (!hasStarted || isDead) && (
             <FloatMenu>
-                {!hasStarted ? (
-                    <Button type="button" onClick={() => start()}>
-                        Iniciar
-                    </Button>
-                ) : (
-                    <Button type="button" onClick={() => restart()}>
-                        Reiniciar
-                    </Button>
-                )}
-                <p>
+                <div className="mb-0 mb-lg-3">
+                    {!hasStarted ? (
+                        <Button
+                            className="btn-block w-100"
+                            type="button"
+                            onClick={() => start()}
+                        >
+                            Iniciar
+                        </Button>
+                    ) : (
+                        <Button
+                            className="btn-block w-100"
+                            type="button"
+                            onClick={() => restart()}
+                        >
+                            Reiniciar
+                        </Button>
+                    )}
+                </div>
+                <p className="d-none d-lg-block">
                     Utilize as setas do teclado para se mover. Para pausar o
                     jogo pressione a tecla [ESC]
                 </p>

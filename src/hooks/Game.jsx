@@ -22,7 +22,6 @@ export const useGame = () => {
 };
 
 const stageSize = 20;
-const ticInterval = 50;
 const specialScore = 10;
 const specialFoodScoreInterval = 10;
 const specialFoodTimeInterval = 10 * 1000;
@@ -77,11 +76,17 @@ export const GameProvider = ({ children }) => {
     const [lastTicTime, setLastTicTime] = useState(0);
     const [currentDirection, setCurrentDirection] = useState(null);
     const [stageHeight, setStageHeight] = useState(0);
+    const [moveInDirection, setMoveInDirection] = useState(null);
 
     const [scores, setScores] = useState({
         current: 0,
         highScore: 0,
     });
+
+    const ticInterval = useMemo(() => {
+        const interval = 500 / (1 + (totalEatenFood + 1) / 15);
+        return interval > 50 ? interval : 50;
+    }, [totalEatenFood]);
 
     const snakeCellSize = useMemo(() => stageHeight / stageSize, [stageHeight]);
     const foodSize = useMemo(() => stageHeight / stageSize / 2, [stageHeight]);
@@ -142,7 +147,37 @@ export const GameProvider = ({ children }) => {
         });
     }, []);
 
-    const [moveInDirection, setMoveInDirection] = useState(null);
+    const moveUp = useCallback(
+        () =>
+            opositeDirections.up !== currentDirection
+                ? setMoveInDirection(directions.up)
+                : null,
+        [currentDirection]
+    );
+
+    const moveDown = useCallback(
+        () =>
+            opositeDirections.down !== currentDirection
+                ? setMoveInDirection(directions.down)
+                : null,
+        [currentDirection]
+    );
+
+    const moveLeft = useCallback(
+        () =>
+            opositeDirections.left !== currentDirection
+                ? setMoveInDirection(directions.left)
+                : null,
+        [currentDirection]
+    );
+
+    const moveRight = useCallback(
+        () =>
+            opositeDirections.right !== currentDirection
+                ? setMoveInDirection(directions.right)
+                : null,
+        [currentDirection]
+    );
 
     const startSpecialFoodTimer = useCallback(() => {
         const endTime = (new Date().getTime() + specialFoodTimeInterval) / 1000;
@@ -346,7 +381,7 @@ export const GameProvider = ({ children }) => {
                 }
             }
         },
-        [isRunning, lastTicTime, registerInput, tic]
+        [isRunning, lastTicTime, registerInput, tic, ticInterval]
     );
 
     const providerValue = useMemo(
@@ -369,6 +404,10 @@ export const GameProvider = ({ children }) => {
             pause,
             unPause,
             restart,
+            moveUp,
+            moveDown,
+            moveLeft,
+            moveRight,
         }),
         [
             hasStarted,
@@ -388,6 +427,10 @@ export const GameProvider = ({ children }) => {
             pause,
             unPause,
             restart,
+            moveUp,
+            moveDown,
+            moveLeft,
+            moveRight,
         ]
     );
 

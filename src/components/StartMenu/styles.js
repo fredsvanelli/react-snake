@@ -27,5 +27,4 @@ export const Button = styled.button`
     color: var(--color-dark);
     border-radius: 5px;
     padding: 5px 20px;
-    margin-bottom: 45px;
 `;

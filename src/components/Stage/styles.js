@@ -3,6 +3,11 @@ import styled from 'styled-components';
 export const StageContainer = styled.div`
     display: flex;
     flex-grow: 1;
+    max-height: 60vh;
+
+    @media (max-width: 767px) {
+        max-height: 40vh;
+    }
 `;
 
 export const StageBox = styled.div`

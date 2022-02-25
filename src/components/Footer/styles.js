@@ -1,27 +1,31 @@
 import styled from 'styled-components';
 
-export const FooterContainer = styled.header`
+export const FooterContainer = styled.footer`
     padding: 15px 0;
 
-    & > div:first-child {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    @media (max-width: 767px) {
+        padding-top: 30px;
+    }
+`;
 
-        & > div {
-            margin: 0 10px;
-            text-align: center;
-        }
+export const Scores = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        & > div p > b {
-            color: #fff;
-            font-size: 2rem;
-        }
+    & > div {
+        margin: 0 10px;
+        text-align: center;
+    }
 
-        & div > span {
-            color: var(--color-purple);
-            font-size: 2rem;
-        }
+    & > div p > b {
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    & div > span {
+        color: var(--color-purple);
+        font-size: 2rem;
     }
 `;
 

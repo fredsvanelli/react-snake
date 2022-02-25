@@ -12,6 +12,8 @@ import StartMenu from './components/StartMenu';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import './assets/bootstrap.min.css';
+
 const App = () => {
     const { onUpdate, setStageHeight } = useGame();
 

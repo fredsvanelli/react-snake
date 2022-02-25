@@ -4,6 +4,7 @@ export default createGlobalStyle`
     :root {
         --color-blue: #6ae4fc;
         --color-purple: #a77ae4;
+        --color-purple-dark: #815fb0;
         --color-green: #34ff89;
         --color-yellow: #f0fb7f;
         --color-red: #e94444;

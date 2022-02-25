@@ -1,12 +1,14 @@
 import { useGame } from '../../hooks/Game';
-import { FooterContainer, Credits } from './styles';
+import Keyboard from '../Keyboard';
+import { FooterContainer, Credits, Scores } from './styles';
 
 const Footer = () => {
     const { scores } = useGame();
 
     return (
         <FooterContainer>
-            <div>
+            <Keyboard />
+            <Scores className="d-none d-lg-flex">
                 <div>
                     <p>
                         <b>Pontos</b>
@@ -19,7 +21,7 @@ const Footer = () => {
                     </p>
                     <span>{scores.highScore}</span>
                 </div>
-            </div>
+            </Scores>
             <Credits>
                 Criado por{' '}
                 <a
