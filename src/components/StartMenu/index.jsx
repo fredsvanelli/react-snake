@@ -16,7 +16,7 @@ const PlayButton = () => {
                             type="button"
                             onClick={() => start()}
                         >
-                            Iniciar
+                            Start
                         </Button>
                     ) : (
                         <Button
@@ -24,13 +24,12 @@ const PlayButton = () => {
                             type="button"
                             onClick={() => restart()}
                         >
-                            Reiniciar
+                            Restart
                         </Button>
                     )}
                 </div>
                 <p className="d-none d-lg-block">
-                    Utilize as setas do teclado para se mover. Para pausar o
-                    jogo pressione a tecla [ESC]
+                    Use the keyboard keys to move. Press [ESC] to pause the game
                 </p>
             </FloatMenu>
         )

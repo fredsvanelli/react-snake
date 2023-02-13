@@ -12,13 +12,13 @@ const Header = () => {
             <Scores className="d-lg-none">
                 <div>
                     <p>
-                        <b>Pontos</b>
+                        <b>Score</b>
                         <span>{scores.current}</span>
                     </p>
                 </div>
                 <div>
                     <p>
-                        <b>Melhor</b>
+                        <b>Best</b>
                         <span>{scores.highScore}</span>
                     </p>
                 </div>

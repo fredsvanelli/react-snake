@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import './assets/bootstrap.min.css';
+import { FloatMenu } from './styles';
 
 const App = () => {
     const { onUpdate, setStageHeight } = useGame();
@@ -28,8 +29,10 @@ const App = () => {
     return (
         <div id="game">
             <GameContainer onUpdate={e => onUpdate(e)}>
-                <PlayButton />
-                <PauseButton />
+                <FloatMenu>
+                    <PlayButton />
+                    <PauseButton />
+                </FloatMenu>
                 <Header />
                 <Stage>
                     <Snake />

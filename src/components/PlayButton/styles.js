@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-    position: absolute;
-    top: 30px;
-    right: 20px;
     display: inline-block;
     width: 0;
     height: 0;

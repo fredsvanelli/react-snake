@@ -11,21 +11,21 @@ const Footer = () => {
             <Scores className="d-none d-lg-flex">
                 <div>
                     <p>
-                        <b>Pontos</b>
+                        <b>Score</b>
                     </p>
                     <span>{scores.current}</span>
                 </div>
                 <div>
                     <p>
-                        <b>Melhor</b>
+                        <b>Best</b>
                     </p>
                     <span>{scores.highScore}</span>
                 </div>
             </Scores>
             <Credits>
-                Criado por{' '}
+                Created by{' '}
                 <a
-                    href="https://github.com/fredsvanelli/react-snake"
+                    href="https://fredvanelli.dev"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
